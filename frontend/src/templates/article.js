@@ -65,16 +65,16 @@ const Article = ({ data }) => {
 
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div>
-                {article.author.picture && (
+                {article.author?.picture && (
                   <Img
-                    fixed={article.author.picture.childImageSharp.fixed}
+                    fixed={article.author?.picture.childImageSharp.fixed}
                     imgStyle={{ position: "static", borderRadius: "50%" }}
                   />
                 )}
               </div>
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom">
-                  By {article.author.name}
+                  By {article.author?.name}
                 </p>
                 <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>
