@@ -1,5 +1,11 @@
 # Strapi Starter Gatsby Blog
 
+## How to do?
+
+- First Add article on the strapi!
+- Second, build the strapi
+- Then, run `yarn develop` on frontend(gatsby), which does fetch data from strapi.
+
 Gatsby starter for creating a blog with Strapi.
 
 ![screenshot image](/screenshot.png)
