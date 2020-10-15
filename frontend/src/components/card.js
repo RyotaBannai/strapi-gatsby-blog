@@ -23,7 +23,7 @@ const Card = ({ article }) => {
             <hr className="uk-divider-small" />
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div>
-                {article.node.author.picture && (
+                {article.node.author?.picture && (
                   <Img
                     fixed={article.node.author.picture.childImageSharp.fixed}
                     imgStyle={{ position: "static", borderRadius: "50%" }}
@@ -32,7 +32,7 @@ const Card = ({ article }) => {
               </div>
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom">
-                  {article.node.author.name}
+                  {article.node.author?.name}
                 </p>
               </div>
             </div>
