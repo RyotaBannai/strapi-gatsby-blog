@@ -75,3 +75,14 @@ cp .env.example .env
 The Gatsby server will run here => [http://localhost:3000](http://localhost:3000)
 
 Enjoy this starter!
+
+### Gatsby Memos
+#### How to creat Route in Gatsby
+- [reference](https://www.gatsbyjs.com/docs/routing/)
+- In your site’s `gatsby-node.js` by implementing the API createPages
+  - `context Object`: Context data for this page. Passed as props to the component `this.props.pageContext` as well as to the graphql query as `graphql` arguments.
+- Gatsby core automatically turns React components in `src/pages` into pages
+  - Pages defined in `src/pages`: For example, `contact.js` will be found at `yoursite.com/contact`
+  - If `contact.js` is moved to a directory called information, located inside `src/pages`, the page will now be found at `yoursite.com/information/contact`
+  - The exception to this rule is any file named `index.js`
+- Plugins can also implement createPages and create pages for you
