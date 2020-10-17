@@ -44,6 +44,11 @@ const Article = ({ data }) => {
     article: true,
   };
 
+  /** Replace all img link so that article correctly refer api server's public folder */
+  const regex = /\/uploads/gi;
+  // TODO: get from dotenv or something
+  const API_URL = "http://localhost:1337";
+
   return (
     <Layout seo={seo}>
       <div>
@@ -59,7 +64,10 @@ const Article = ({ data }) => {
 
         <div className="uk-section">
           <div className="uk-container uk-container-small">
-            <Markdown source={article.content} escapeHtml={false} />
+            <Markdown
+              source={article.content.replaceAll(regex, `${API_URL}/uploads`)}
+              escapeHtml={false}
+            />
 
             <hr className="uk-divider-small" />
 
