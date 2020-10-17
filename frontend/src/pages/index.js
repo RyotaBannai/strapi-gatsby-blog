@@ -18,6 +18,10 @@ const IndexPage = () => {
     </Layout>
   );
 };
+/**
+ * Add intermediate operation, such as filter, sort
+ * https://www.gatsbyjs.com/docs/graphql-reference
+ */
 
 const query = graphql`
   query {
@@ -33,7 +37,10 @@ const query = graphql`
         }
       }
     }
-    allStrapiArticle(filter: { status: { eq: "published" } }) {
+    allStrapiArticle(
+      filter: { status: { eq: "published" } }
+      sort: { fields: [strapiId], order: DESC }
+    ) {
       edges {
         node {
           strapiId
